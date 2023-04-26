@@ -14,6 +14,7 @@ const percent = document.getElementById('percent');
 const root = document.getElementById('sqrt');
 
 let defaultSqValue;
+let defaultSq;  
 let defaultValue = '';
 let percentVal;
 let number;
@@ -51,12 +52,10 @@ function operator(message){
     //     calculate();
     // }
     
-    // topBar.value += resultBar + operator ;*
-    topBar.value += resultBar.value + message
+    // topBar.value += resultBar + operator ;
+    topBar.value += resultBar.value + message;
     if (sign) {
         calculate()
-
-        
     }
     sign = message
     canClear=true
@@ -87,21 +86,14 @@ function percentage(){
 
     if(resultBar){}
 }
-function pow(){
-    
-    defaultSq = topBar.value;
-    square = Math.pow(topBar.value, 2);
 
-    topBar.value = `sqr(${defaultSq})`
-    resultBar.value = square;
-}
 
 function squareRoot(){
     defaultSqValue = topBar.value;
     // topBar.value = `√(${defaultSqValue})`
     let sqroot = Math.sqrt(defaultSqValue)
     if(topBar.value){
-        topBar.value = '√' + '(' + defaultSqr + ')';
+        topBar.value = '√' + '(' + defaultSqValue + ')';
     }
 
     resultBar.value = sqroot;
@@ -147,4 +139,14 @@ function clearEntry(){
 function clearAll(){
     clearEntry();
     topBar.value = '';
+}
+
+
+function pow(){
+
+    defaultSq = topBar.value;
+
+    let square = Math.pow(defaultSq, 2);
+    resultBar.value = square;
+
 }
