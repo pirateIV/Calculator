@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="./icons-main/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="./bootstrap.css">
+</head>
+<body>
+    <div class="calculator m-auto text-white my-4">
+        
+        <div class="top-tab align-items-center justify-content-between">
+            <div class="tab-left">
+                <i class="bi bi-list"></i>
+                <h5>Standard</h5>
+            </div>
+            <i class="bi bi-arrow-counterclockwise"></i>
+        </div>
+            
+        <input type="text" class="fw-bold" value="" id="topBar" style="text-align: right !important; font-size: 13px !important; height: 40px; width: 100%;" disabled>
+        <input type="number" class="w-100" id="resultBar" readonly>
+        <div class="keys">
+            <div class="top d-flex text-muted justify-content-between align-items-center">
+                <button class="text-muted"><h6>MC</h6></button>
+                <button class="text-muted"><h6>MR</h6></button>
+                <button class="text-muted"><h6>M+</h6></button>
+                <button><h6 class="text-dark">M-</h6></button>
+                <button><h6 class="text-dark">MS</h6></button>
+                <button class="text-muted"><h6>M</h6></button>
+            </div>
+            <div class="numbers text-white">
+                <button class="btn-gray" id="percent">%</button>
+                <button class="btn-gray" id="ce">CE</button>
+                <button class="btn-gray" onclick="clearAll()">C</button>
+                <button class="btn-gray" onclick="backSpace()" onkeypress="backSpace()">DEL <div class="bi bi-backspace" id="cancel"></div></button>
+                <button class="btn-gray" id="inverse"> &#x215F; x</button>
+                <button class="btn-gray" onclick="pow()"><var>x<sup style="font-style: normal;">2</sup></var></button>
+                <button class="btn-gray" id="sqrt">&#x00B2;&radic;x</button>
+                <button class="operator" onclick="operator(`/`)" id="operator">÷</button>
+                <button onclick="updateNum(7)" id="numval">7</button>
+                <button onclick="updateNum(8)" id="numval">8</button>
+                <button onclick="updateNum(9)" id="numval">9</button>
+                <button onclick="operator('*') " id="operator">×<i class="bi bi-x"></i></button>
+                <button onclick="updateNum(4)" id="numval">4</i></button>
+                <button onclick="updateNum(5)" id="numval">5</i></button>
+                <button onclick="updateNum(6)" id="numval">6</i></button>
+                <button onclick="operator('-')" id="operator">-</button>
+                <button onclick="updateNum(1)" id="numval">1</button>
+                <button onclick="updateNum(2)" id="numval">2</button>
+                <button onclick="updateNum(3)" id="numval">3</button>
+                <button class="operator" onclick="operator('+')" id="operator">+</button>
+                <button>±</button>
+                <button onclick="updateNum(0)" id="numval">0</button>
+                <button onclick="updateNum('.')" id="numval">.</button>
+                <button id="calculate">=</button>
+            </div>
+        </div>
+    </div>
+    <div id="anwser"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
