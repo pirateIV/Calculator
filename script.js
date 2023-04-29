@@ -3,8 +3,8 @@ const topBar = document.getElementById('topBar');
 let resultBar = document.getElementById('resultBar');
 let canClear = false;
 let sign;
-let letter1;
-let letter2;
+let firstNum;
+let secondNum;
 
 
 
@@ -33,34 +33,27 @@ function updateNum(message){
         resultBar.value=''
     }
 
-    // if(canClear){
-    //     canClear = false;
-    //     resultBar.value = ''
-    // }
-    // resultBar.value = ''
-
-   
     resultBar.value += message;
-    letter2  = resultBar.value
+    // secondNum  = resultBar.value
 
     // res = number;
 
     // num = number;
 }
-function operator(message){
+function operator(oper){
     // if(oper){
     //     calculate();
     // }
     
     // topBar.value += resultBar + operator ;
-    topBar.value += resultBar.value + message;
+    topBar.value += resultBar.value + oper;
     if (sign) {
         calculate()
     }
-    sign = message
+    sign = oper;
     canClear=true
     
-    letter1 = resultBar.value
+    firstNum = resultBar.value
 }
 
 
@@ -69,8 +62,6 @@ function inverseValue(){
     let anwser = 1 / topBar.value;
     resultBar.value = anwser;
 
-    // defaultValue = `1 ÷ ${topBar.value} =`
-    // topBar.value = defaultValue;
 }
 
 function backSpace(){
@@ -91,7 +82,7 @@ function percentage(){
 function squareRoot(){
     defaultSqValue = topBar.value;
     // topBar.value = `√(${defaultSqValue})`
-    let sqroot = Math.sqrt(defaultSqValue)
+    let sqroot = Math.sqrt(topBar.value)
     if(topBar.value){
         topBar.value = '√' + '(' + defaultSqValue + ')';
     }
@@ -111,18 +102,18 @@ calc.addEventListener('click', calculate)
 function calculate(){
         
 if(sign == '+'){
-    resultBar.value = Number(letter1) + Number(resultBar.value)
+    resultBar.value = Number(firstNum) + Number(resultBar.value)
 }
 else if(sign == '-'){
-    resultBar.value = Number(letter1) - Number(resultBar.value)
+    resultBar.value = Number(firstNum) - Number(resultBar.value)
 }
 else if(sign == '/'){
-    resultBar.value = Number(letter1) / Number(resultBar.value)
+    resultBar.value = Number(firstNum) / Number(resultBar.value)
 }
 else if(sign == '*'){
-    resultBar.value = Number(letter1) * Number(resultBar.value)
+    resultBar.value = Number(firstNum) * Number(resultBar.value)
 }
-resultBar.value = resultBar.value
+// resultBar.value = resultBar.value
 sign =''
     console.log(resultBar.value)
     // let ans = topBar.value;
